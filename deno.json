@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "demo": "deno run demo.ts"
+  },
+  "name": "@mathisba/test",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./test.ts"
+}
