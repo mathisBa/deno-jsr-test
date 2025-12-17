@@ -40,9 +40,9 @@ export function test(name: string, fn: TestFn): void {
 }
 
 class AssertionError extends Error {
-  name = "AssertionError" as const;
   constructor(message: string) {
     super(message);
+    this.name = "AssertionError";
   }
 }
 
