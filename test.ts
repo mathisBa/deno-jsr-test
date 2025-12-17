@@ -14,6 +14,10 @@ interface Suite {
 const root: Suite = { name: "<root>", suites: [], tests: [] };
 const suiteStack: Suite[] = [root];
 
+export interface Expectation<T> {
+  toBe(expected: T): void;
+}
+
 /** describe(name, fn) */
 export function describe(name: string, fn: () => void | Promise<void>): void {
   const parent = suiteStack[suiteStack.length - 1];
@@ -46,7 +50,7 @@ class AssertionError extends Error {
   }
 }
 
-export function expect<T>(actual: T) {
+export function expect<T>(actual: T): Expectation<T> {
   return {
     toBe(expected: T) {
       if (!Object.is(actual, expected)) {
