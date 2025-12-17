@@ -3,7 +3,7 @@
     "demo": "deno run demo.ts"
   },
   "name": "@mathisba/test",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
-  "exports": "./test.ts"
+  "exports": "./mod.ts"
 }
